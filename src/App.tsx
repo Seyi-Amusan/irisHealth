@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import HeroSection from './components/sections/Herosection'
 import AboutSection from './components/sections/Aboutsection'
+import ServicesSection from './components/sections/Servicessection'
 
 
 
@@ -10,6 +11,7 @@ export default function App() {
     <div>
       <HeroSection />
       <AboutSection />
+      <ServicesSection />
     </div>
   )
 }

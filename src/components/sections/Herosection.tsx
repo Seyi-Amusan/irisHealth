@@ -30,42 +30,6 @@ interface IrisLogoIconProps {
   size?: number;
 }
 
-function IrisLogoIcon({ size = 32 }: IrisLogoIconProps) {
-  return (
-    <svg
-      width={size}
-      height={Math.round(size * 1.125)}
-      viewBox="0 0 32 36"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M16 2C16 2 10 8 10 16C10 20 12 23 16 24C20 23 22 20 22 16C22 8 16 2 16 2Z"
-        fill="#6B4EC6"
-        opacity="0.9"
-      />
-      <path
-        d="M16 24C16 24 6 20 4 14C3 10 5 7 8 7C11 7 13 10 14 13"
-        stroke="#6B4EC6"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        fill="none"
-        opacity="0.6"
-      />
-      <path
-        d="M16 24C16 24 26 20 28 14C29 10 27 7 24 7C21 7 19 10 18 13"
-        stroke="#6B4EC6"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        fill="none"
-        opacity="0.6"
-      />
-      <line x1="16" y1="24" x2="16" y2="36" stroke="#6B4EC6" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="16" y1="30" x2="12" y2="34" stroke="#6B4EC6" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
-      <line x1="16" y1="30" x2="20" y2="34" stroke="#6B4EC6" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
-    </svg>
-  );
-}
 
 // ── Main Component ─────────────────────────────────────────────────────────
 
@@ -123,7 +87,7 @@ export default function HeroSection() {
           >
             {/* Logo */}
             <a href="#" className="flex items-center gap-2 flex-shrink-0">
-              <img src={irisLogo} alt="Iris logo" className="h-10 w-auto" />
+              <img src={irisLogo} alt="Iris logo" className="h-12 w-auto" />
             </a>
 
             {/* Desktop nav */}
@@ -260,7 +224,7 @@ export default function HeroSection() {
               <div key={`cta-${current}`} className="flex flex-wrap gap-4 animate-fadeInUp animation-delay-300">
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#6B4EC6] hover:bg-[#5A3EAD] text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-purple-500/30 hover:-translate-y-0.5 active:scale-95"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#6B4EC6] hover:bg-[#5A3EAD] text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-sm hover:shadow-purple-500/30 hover:-translate-y-0.5 active:scale-95"
                 >
                   {slide.cta}
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -328,7 +292,7 @@ export default function HeroSection() {
                 <p className="text-xs font-semibold uppercase tracking-wider opacity-80">Free</p>
                 <p className="text-sm font-bold">15-Min Consultation</p>
               </div>
-              <a
+              {/* <a
                 href="#"
                 aria-label="Book a free 15-minute consultation call"
                 className="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
@@ -336,7 +300,7 @@ export default function HeroSection() {
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

@@ -2,15 +2,6 @@ import type { Slide, NavLink } from "../types";
 
 export const slides: Slide[] = [
   {
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80",
-    eyebrow: "Your Partner in Health",
-    headline: ["World-Class Care,", "Close To Home."],
-    accentWords: ["Close To Home."],
-    sub: "Comprehensive medical services tailored to every stage of your life — delivered with compassion and expertise.",
-    cta: "Book Appointment",
-    ctaSecondary: "Our Services",
-  },
-  {
     image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1600&q=80",
     eyebrow: "Expert Medical Team",
     headline: ["Specialists Who", "Truly Listen."],
@@ -37,6 +28,15 @@ export const slides: Slide[] = [
     cta: "Book Appointment",
     ctaSecondary: "Learn More",
   },
+  {
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80",
+    eyebrow: "Your Partner in Health",
+    headline: ["World-Class,", "Close To Home."],
+    accentWords: ["Close To Home."],
+    sub: "Comprehensive medical services tailored to every stage of your life — delivered with compassion and expertise.",
+    cta: "Book Appointment",
+    ctaSecondary: "Our Services",
+  }
 ];
 
 export const navLinks: NavLink[] = [

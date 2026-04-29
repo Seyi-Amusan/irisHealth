@@ -50,3 +50,25 @@ export interface NavLink {
   href: string;
   dropdown?: string[];
 }
+
+// ── Services ──────────────────────────────────────────────────────────────
+ 
+export type ServiceCardVariant = "photo" | "solid";
+ 
+export interface ServiceCard {
+  variant: ServiceCardVariant;
+  title: string;
+  tag?: string;
+  image?: string;
+  imageAlt?: string;
+  href: string;
+}
+ 
+export interface ServicesSection {
+  eyebrow: string;
+  headlineStart: string;
+  headlineAccent: string;
+  headlineEnd: string;
+  footnote: string;
+  cards: ServiceCard[];
+}

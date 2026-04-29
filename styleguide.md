@@ -310,14 +310,14 @@ src/
 
 ## 14. Do's & Don'ts
 
-### ✅ Do
+### Do
 - Use `primary-500` as the only accent color — keep it consistent
 - Pair white cards with subtle `shadow-md` in light mode
 - Use `rounded-xl` as the default card radius
 - Use Inter at weight 400/600 only (avoid 300 and 800+)
 - Keep section vertical padding at minimum `py-16`
 
-### ❌ Don't
+### Don't
 - Never use pure `#000000` black — use `neutral-900`
 - Never use pure `#FFFFFF` white in dark mode — use `#151528`
 - Don't mix multiple accent colors
