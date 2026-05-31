@@ -11,15 +11,6 @@ export const slides: Slide[] = [
     ctaSecondary: "Book Appointment",
   },
   {
-    image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1600&q=80",
-    eyebrow: "Advanced Technology",
-    headline: ["Modern Medicine,", "Human Touch."],
-    accentWords: ["Human Touch."],
-    sub: "State-of-the-art diagnostics and treatment facilities, paired with the warmth of personalised patient care.",
-    cta: "Explore Services",
-    ctaSecondary: "Contact Us",
-  },
-  {
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1600&q=80",
     eyebrow: "Wellness For All",
     headline: ["Strength At", "Every Stage Of Life."],
