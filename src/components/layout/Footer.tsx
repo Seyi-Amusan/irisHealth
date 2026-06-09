@@ -1,9 +1,10 @@
+import type { ReactElement } from "react";
 import { footerContent } from "../../data/footer";
 import type { FooterContactItem } from "../../data/footer";
 
 // ── Social Icons ───────────────────────────────────────────────────────────
 
-const socialIcons: Record<string, JSX.Element> = {
+const socialIcons: Record<string, ReactElement> = {
   facebook: (
     <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
       <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
@@ -29,27 +30,6 @@ const socialIcons: Record<string, JSX.Element> = {
   ),
 };
 
-// ── Contact Icons ──────────────────────────────────────────────────────────
-
-const contactIcons: Record<FooterContactItem["icon"], JSX.Element> = {
-  phone: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.64A2 2 0 012 .82h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-    </svg>
-  ),
-  mail: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-      <polyline points="22,6 12,13 2,6" />
-    </svg>
-  ),
-  "map-pin": (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
-  ),
-};
 
 // ── Iris Logo Icon ─────────────────────────────────────────────────────────
 
@@ -74,19 +54,31 @@ export default function Footer() {
   return (
     <footer className="bg-[#0D0D1A] text-white">
 
+      {/* ── Top CTA strip ─────────────────────────────────────────────── */}
+      <div className="border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="text-white font-semibold text-lg">Ready to take control of your health?</p>
+            <p className="text-gray-400 text-sm mt-1">Book a consultation today — same-day slots available.</p>
+          </div>
+          <a
+            href={contact.ctaHref}
+            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#6B4EC6] hover:bg-[#5A3EAD] text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/30 hover:-translate-y-0.5 active:scale-95"
+          >
+            {contact.cta}
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
       {/* ── Main footer grid ──────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
           {/* Col 1 — Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <a href="#" className="inline-flex items-center gap-2 mb-4">
-              <IrisLogoIcon />
-              <span className="text-xl font-bold tracking-tight">
-                <span className="text-[#6B4EC6]">Iris</span>
-                <span className="text-white">Health</span>
-              </span>
-            </a>
             <p className="text-[#A48ED9] text-sm font-semibold italic mb-3">{tagline}</p>
             <p className="text-gray-400 text-sm leading-relaxed mb-8">{mission}</p>
             <div className="flex items-center gap-3">
@@ -138,16 +130,10 @@ export default function Footer() {
                       href={item.href}
                       className="flex items-start gap-3 text-gray-400 hover:text-[#A48ED9] transition-colors duration-200 group"
                     >
-                      <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-[#6B4EC6]/15 group-hover:bg-[#6B4EC6]/30 flex items-center justify-center text-[#6B4EC6] transition-colors duration-200 mt-0.5">
-                        {contactIcons[item.icon]}
-                      </span>
                       <span className="text-sm leading-relaxed">{item.value}</span>
                     </a>
                   ) : (
                     <div className="flex items-start gap-3 text-gray-400">
-                      <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-[#6B4EC6]/15 flex items-center justify-center text-[#6B4EC6] mt-0.5">
-                        {contactIcons[item.icon]}
-                      </span>
                       <span className="text-sm leading-relaxed">{item.value}</span>
                     </div>
                   )}

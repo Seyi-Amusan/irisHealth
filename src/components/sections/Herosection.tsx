@@ -1,9 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { slides, navLinks } from "../../data/hero";
-import type { NavLink } from "../../types";
-import irisLogo from "../../assets/logo/irisLogo.png";
-
-// ── Sub-components ─────────────────────────────────────────────────────────
+import { slides } from "../../data/hero";
 
 interface HeadlineProps {
   lines: [string, string];
@@ -16,8 +12,7 @@ function Headline({ lines, accentWords }: HeadlineProps) {
       {lines.map((line, i) => (
         <span
           key={i}
-          className={`block ${accentWords.includes(line) ? "text-[#A48ED9]" : "text-white"
-            }`}
+          className={`block ${accentWords.includes(line) ? "text-[#A48ED9]" : "text-white"}`}
         >
           {line}
         </span>
@@ -26,19 +21,9 @@ function Headline({ lines, accentWords }: HeadlineProps) {
   );
 }
 
-interface IrisLogoIconProps {
-  size?: number;
-}
-
-
-// ── Main Component ─────────────────────────────────────────────────────────
-
 export default function HeroSection() {
   const [current, setCurrent] = useState<number>(0);
   const [animating, setAnimating] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [tabExpanded, setTabExpanded] = useState<boolean>(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -60,120 +45,10 @@ export default function HeroSection() {
     };
   }, [current, animating]);
 
-  useEffect(() => {
-    const onScroll = (): void => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const slide = slides[current];
+  const slide = slides[current]!;
 
   return (
     <div className="relative w-full font-sans">
-
-      {/* ── NAVBAR ─────────────────────────────────────────────────────── */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-            ? "py-2 bg-white/95 dark:bg-[#0D0D1A]/95 backdrop-blur-md shadow-lg"
-            : "py-4 bg-transparent"
-          }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className={`flex items-center justify-between transition-all duration-500 ${!scrolled
-                ? "bg-white/95 dark:bg-[#151528]/95 backdrop-blur-md rounded-2xl px-5 py-3 shadow-xl"
-                : ""
-              }`}
-          >
-            {/* Logo */}
-            <a href="#" className="flex items-center gap-2 flex-shrink-0">
-              <img src={irisLogo} alt="Iris logo" className="h-12 w-auto" />
-            </a>
-
-            {/* Desktop nav */}
-            <div className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link: NavLink) => (
-                <div key={link.label} className="relative">
-                  <a
-                    href={link.href}
-                    className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-[#6B4EC6] dark:hover:text-[#A48ED9] transition-colors duration-200 rounded-lg hover:bg-purple-50 dark:hover:bg-[#1E1E38]"
-                    onMouseEnter={() => link.dropdown && setOpenDropdown(link.label)}
-                    onMouseLeave={() => setOpenDropdown(null)}
-                  >
-                    {link.label}
-                    {link.dropdown && (
-                      <svg className="w-3 h-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    )}
-                  </a>
-
-                  {link.dropdown && openDropdown === link.label && (
-                    <div
-                      className="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-[#151528] rounded-xl shadow-xl border border-gray-100 dark:border-white/10 py-2 z-50"
-                      onMouseEnter={() => setOpenDropdown(link.label)}
-                      onMouseLeave={() => setOpenDropdown(null)}
-                    >
-                      {link.dropdown.map((item: string) => (
-                        <a
-                          key={item}
-                          href="#"
-                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-[#6B4EC6] hover:bg-purple-50 dark:hover:bg-[#1E1E38] transition-colors"
-                        >
-                          {item}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-
-              <a
-                href="#"
-                className="ml-3 px-5 py-2.5 bg-[#6B4EC6] hover:bg-[#5A3EAD] text-white text-sm font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/25 active:scale-95"
-              >
-                Book Appointment
-              </a>
-            </div>
-
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle menu"
-              className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-[#1E1E38]"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {menuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
-
-          {/* Mobile menu */}
-          {menuOpen && (
-            <div className="lg:hidden mt-2 bg-white dark:bg-[#151528] rounded-2xl shadow-xl border border-gray-100 dark:border-white/10 p-4 space-y-1">
-              {navLinks.map((link: NavLink) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="block px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-[#6B4EC6] hover:bg-purple-50 dark:hover:bg-[#1E1E38] rounded-xl transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="#"
-                className="block mt-2 px-4 py-3 bg-[#6B4EC6] text-white text-sm font-semibold rounded-xl text-center"
-              >
-                Book Appointment
-              </a>
-            </div>
-          )}
-        </div>
-      </nav>
 
       {/* ── HERO CAROUSEL ──────────────────────────────────────────────── */}
       <div className="relative w-full h-screen min-h-[600px] overflow-hidden">
@@ -224,7 +99,7 @@ export default function HeroSection() {
               <div key={`cta-${current}`} className="flex flex-wrap gap-4 animate-fadeInUp animation-delay-300">
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#6B4EC6] hover:bg-[#5A3EAD] text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-sm hover:shadow-purple-500/30 hover:-translate-y-0.5 active:scale-95"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#6B4EC6] hover:bg-[#5A3EAD] text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-purple-500/30 hover:-translate-y-0.5 active:scale-95"
                 >
                   {slide.cta}
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -250,10 +125,11 @@ export default function HeroSection() {
               key={i}
               onClick={() => goTo(i)}
               aria-label={`Go to slide ${i + 1}`}
-              className={`transition-all duration-300 rounded-full ${i === current
+              className={`transition-all duration-300 rounded-full ${
+                i === current
                   ? "w-8 h-2.5 bg-[#6B4EC6]"
                   : "w-2.5 h-2.5 bg-white/40 hover:bg-white/70"
-                }`}
+              }`}
             />
           ))}
         </div>
@@ -270,8 +146,9 @@ export default function HeroSection() {
           onMouseLeave={() => setTabExpanded(false)}
         >
           <div
-            className={`flex items-center gap-3 bg-[#6B4EC6] text-white cursor-pointer transition-all duration-500 ease-out overflow-hidden shadow-2xl shadow-purple-900/50 ${tabExpanded ? "rounded-l-2xl pl-5 pr-4 py-4" : "rounded-l-xl py-4 w-10"
-              }`}
+            className={`flex items-center gap-3 bg-[#6B4EC6] text-white cursor-pointer transition-all duration-500 ease-out overflow-hidden shadow-2xl shadow-purple-900/50 ${
+              tabExpanded ? "rounded-l-2xl pl-5 pr-4 py-4" : "rounded-l-xl py-4 w-10"
+            }`}
             style={{ width: tabExpanded ? "auto" : "40px" }}
           >
             <div className="relative flex-shrink-0 w-5 flex justify-center">
@@ -282,17 +159,17 @@ export default function HeroSection() {
                 </span>
               )}
             </div>
-
             <div
-              className={`flex items-center gap-3 transition-all duration-300 ${tabExpanded ? "opacity-100 w-auto" : "opacity-0 w-0"
-                }`}
+              className={`flex items-center gap-3 transition-all duration-300 ${
+                tabExpanded ? "opacity-100 w-auto" : "opacity-0 w-0"
+              }`}
               style={{ whiteSpace: "nowrap" }}
             >
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider opacity-80">Free</p>
                 <p className="text-sm font-bold">15-Min Consultation</p>
               </div>
-              {/* <a
+              <a
                 href="#"
                 aria-label="Book a free 15-minute consultation call"
                 className="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
@@ -300,7 +177,7 @@ export default function HeroSection() {
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-              </a> */}
+              </a>
             </div>
           </div>
         </div>
