@@ -31,14 +31,14 @@ export const slides: Slide[] = [
 ];
 
 export const navLinks: NavLink[] = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   {
     label: "Services",
-    href: "#",
+    href: "/services",
     dropdown: ["Cardiology", "Neurology", "Orthopaedics", "Paediatrics"],
   },
-  { label: "Doctors", href: "#" },
-  { label: "News & Articles", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Doctors", href: "/doctors" },
+  { label: "News & Articles", href: "/news" },
+  { label: "Contact", href: "/contact" },
 ];

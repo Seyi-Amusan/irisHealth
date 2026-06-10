@@ -65,19 +65,19 @@ export const footerContent: FooterContent = {
     },
   ],
   contact: {
-    heading: "Get In Touch",
+  heading: "Get In Touch",
     items: [
       {
         icon: "phone",
         label: "Phone",
-        value: "+1 (800) 123-4567",
-        href: "tel:+18001234567",
+        value: "07307 369 776 / 07780 395 388",
+        href: "tel:07307369776",
       },
       {
         icon: "mail",
         label: "Email",
-        value: "hello@irishealth.com",
-        href: "mailto:hello@irishealth.com",
+        value: "admin@irisphysio.co.uk",
+        href: "mailto:admin@irisphysio.co.uk",
       },
       {
         icon: "map-pin",
@@ -86,7 +86,7 @@ export const footerContent: FooterContent = {
       },
     ],
     cta: "Book an Appointment",
-    ctaHref: "#",
+    ctaHref: "mailto:admin@irisphysio.co.uk",
   },
   legal: {
     copyright: `© ${new Date().getFullYear()} IrisHealth. All rights reserved.`,
