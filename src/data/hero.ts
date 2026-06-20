@@ -38,7 +38,7 @@ export const navLinks: NavLink[] = [
     href: "/services",
     dropdown: ["Cardiology", "Neurology", "Orthopaedics", "Paediatrics"],
   },
-  { label: "Doctors", href: "/doctors" },
+  { label: "Physiotherapists", href: "/physiotherapists" },
   { label: "News & Articles", href: "/news" },
   { label: "Contact", href: "/contact" },
 ];

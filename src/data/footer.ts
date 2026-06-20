@@ -56,7 +56,7 @@ export const footerContent: FooterContent = {
         { label: "General Consultation", href: "#" },
         { label: "Women's Health", href: "#" },
         { label: "Cardiology", href: "#" },
-        { label: "Physiotherapy", href: "#" },
+        { label: "Physiotherapist", href: "#" },
         { label: "Paediatric Care", href: "#" },
         { label: "Mental Health", href: "#" },
       ],
