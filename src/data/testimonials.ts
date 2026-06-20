@@ -24,30 +24,23 @@ export const testimonialsContent: TestimonialsContent = {
   testimonials: [
     {
       quote:
-        "I came in with chronic back pain I'd lived with for three years. The team at IrisHealth didn't just manage the symptoms — they found the root cause and built a plan around my life. Six weeks later I'm pain-free and back at the gym.",
-      name: "Sarah M.",
-      tag: "Chronic Pain Relief",
+      "After my knee replacement I was really struggling. Having the physio come to my home made such a difference — I didn't have to worry about getting to appointments and the personalised care meant I recovered much faster than expected.",
+      name: "Magaret J.",
+      tag: "Post knee replacement · Manchester",
       rating: 5,
     },
     {
       quote:
-        "From the moment I walked in, everything felt different. The diagnostic process was thorough and the doctor actually listened. I finally feel like my health is in good hands.",
-      name: "James O.",
-      tag: "General Consultation",
-      rating: 5,
-    },
-    {
-      quote:
-        "IrisHealth guided me through my pregnancy with such care and expertise. Every appointment felt personalised. I can't recommend them enough to any expecting mother.",
-      name: "Amara K.",
-      tag: "Women's Health",
-      rating: 5,
-    },
-    {
-      quote:
-        "After my surgery, I wasn't sure I'd get back to full fitness. The rehabilitation programme they designed was incredible — progressive, well-monitored and genuinely effective.",
+      "I'd had back pain for years and just accepted it. Iris Physio identified the root cause in the first session and within 6 weeks I was back playing golf. Incredible service delivered with real compassion and expertise.",
       name: "David T.",
-      tag: "Post-Surgery Rehab",
+      tag: "Chronic back pain · Warrington",
+      rating: 5,
+    },
+    {
+      quote:
+      "The convenience of home visits is unmatched. As someone who finds travel difficult, having expert physiotherapy at home has been life-changing. Professional, caring and very knowledgeable — I cannot recommend them highly enough.",
+      name: "Sandra R.",
+      tag: "MSK rehabilitation · Liverpool",
       rating: 5,
     },
   ],

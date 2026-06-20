@@ -34,8 +34,8 @@ export const whyUsContent: WhyUsContent = {
       },
       {
         icon: "award",
-        title: "Board-Certified Specialists",
-        description: "Expert care delivered by fully accredited, internationally trained clinicians.",
+        title: "CSP & HCPC-registered Physiotherapists",
+        description: "Expert care delivered by fully registered and trained clinicians",
       },
       {
         icon: "clock",
@@ -54,7 +54,8 @@ export const whyUsContent: WhyUsContent = {
     headlinePlain: "About",
     headlineAccent: "IrisHealth",
     paragraphs: [
-      "At IrisHealth, we take a 360° approach to your wellbeing — combining cutting-edge diagnostics with compassionate, hands-on care. Our mission is to shift healthcare from reactive treatment to proactive, data-led prevention. By identifying root causes early, we create tailored care plans that deliver lasting results.",
+      "The name “Iris” reflects the clarity of vision - the Iris of the eye regulates light and focus, symbolizing Iris Physio’s commitment to clear, focused and evidence-based clinical care.",
+      "At IrisHealth, we take a 360° approach to your wellbeing, combining cutting-edge diagnostics with compassionate, hands-on care. Our mission is to shift healthcare from reactive treatment to proactive, data-led prevention. By identifying root causes early, we create tailored care plans that deliver lasting results.",
       "We empower every patient to understand their health, prevent illness, and take control of their life with clarity and confidence — at every age and every stage.",
     ],
     cta: "Find Out More About Us",

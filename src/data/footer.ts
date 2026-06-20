@@ -33,20 +33,19 @@ export interface FooterContent {
 export const footerContent: FooterContent = {
   tagline: "See it. Own it. Heal it.",
   mission:
-    "World-class healthcare delivered with compassion — empowering every patient to live stronger, longer, and better.",
+    "MSK care delivered with compassion — empowering every patient to live stronger, longer, and better.",
   socials: [
-    { platform: "facebook", href: "#" },
-    { platform: "instagram", href: "#" },
-    { platform: "twitter", href: "#" },
-    { platform: "linkedin", href: "#" },
-  ],
+  { platform: "instagram", href: "https://www.instagram.com/iris.physio?igsh=cG9yNGdvcXk1bDF1" },
+  { platform: "tiktok", href: "https://www.tiktok.com/@iris.physio" },
+  { platform: "linkedin", href: "https://www.linkedin.com/company/iris-physiotherapy/" },
+],
   columns: [
     {
       heading: "Quick Links",
       links: [
         { label: "Home", href: "#" },
         { label: "About Us", href: "#" },
-        { label: "Our Doctors", href: "#" },
+        { label: "Our Physioteraphy", href: "#" },
         { label: "News & Articles", href: "#" },
         { label: "Book Appointment", href: "#" },
       ],
@@ -58,7 +57,6 @@ export const footerContent: FooterContent = {
         { label: "Women's Health", href: "#" },
         { label: "Cardiology", href: "#" },
         { label: "Physiotherapy", href: "#" },
-        // { label: "Advanced Diagnostics", href: "#" },
         { label: "Paediatric Care", href: "#" },
         { label: "Mental Health", href: "#" },
       ],
@@ -78,11 +76,6 @@ export const footerContent: FooterContent = {
         label: "Email",
         value: "admin@irisphysio.co.uk",
         href: "mailto:admin@irisphysio.co.uk",
-      },
-      {
-        icon: "map-pin",
-        label: "Address",
-        value: "24 Wellness Avenue, Suite 100, New York, NY 10001",
       },
     ],
     cta: "Book an Appointment",
