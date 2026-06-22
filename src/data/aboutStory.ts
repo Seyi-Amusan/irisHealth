@@ -17,7 +17,7 @@ export const aboutStoryContent: AboutStoryContent = {
   heading: "Healthcare Built Around You",
   paragraphs: [
     "IrisHealth was founded on a simple but powerful belief — that every patient deserves more than a rushed appointment. We saw a gap between what healthcare could be and what it often was, and we set out to close it.",
-    "Today, our clinics bring together specialists across multiple disciplines, united by a shared commitment to evidence-based, patient-first care. We don't treat symptoms in isolation — we look at the whole person.",
+    "Our clinics bring together HCPC-registered professionals, trained and equipped, to deliver high quality and evidence-based MSK care, with a genuine commitment to improving your overall quality of life. Whether you’re managing an acute or chronic condition, recovering from surgery, or simply investing in preventive health, our team is with you at every stage."
   ],
   pullQuote:
     "True healing comes from more than treatment. It's built on trust, patience, and compassion — reflected in every small victory and ongoing step forward.",

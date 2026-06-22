@@ -45,7 +45,7 @@ export const footerContent: FooterContent = {
       links: [
         { label: "Home", href: "#" },
         { label: "About Us", href: "#" },
-        { label: "Our Physioteraphy", href: "#" },
+        { label: "Our Physioterapists", href: "#" },
         { label: "News & Articles", href: "#" },
         { label: "Book Appointment", href: "#" },
       ],
